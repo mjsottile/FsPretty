@@ -4,16 +4,25 @@
 #I "../../bin"
 
 (**
-Introducing your project
-========================
+Using FsPretty
+==============
 
-Say more
+The goal of a pretty printer combinator library is to make it easy to
+render structured documents.  The combinators provide ways of combining
+elements of a document together to achieve a layout that is desired without
+having to manually deal with things like indentation, nesting, alignment, and
+so on.
 
 *)
 #r "FsPretty.dll"
-open FsPretty
+open FsPretty.PrettyPrint
 
-Library.hello 0
+let x = semiBraces [text "foo" <**> text "bar"]
+printfn "%A" (displayString x)
+
 (**
-Some more info
+
+This tutorial is a placeholder.  More details will be posted soon as the
+tutorial is developed.
+
 *)
