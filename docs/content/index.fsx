@@ -7,7 +7,9 @@
 FsPretty
 ======================
 
-Documentation
+This library is an implementation of the pretty printer combinator library described by Philip Wadler in
+"A Prettier Printer", (available at <A HREF="http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.19.635">CiteSeer</A>).
+It is based on the Haskell wl-pprint implementation.
 
 <div class="row">
   <div class="span1"></div>
@@ -23,23 +25,25 @@ Documentation
 Example
 -------
 
-This example demonstrates using a function defined in this sample library.
+The goal of the library is to allow documents to be assembled easily via a set of functional combinators.
+For example, a list of integers can be turned into a tuple via:
 
 *)
 #r "FsPretty.dll"
-open FsPretty
+open FsPretty.PrettyPrint
 
-printfn "hello = %i" <| Library.hello 0
+let mylist = List.map mkint [1;2;3]
+             |> encloseSep lbracket rbracket semi
+
+printfn "mylist = %S" <| displayString mylist
 
 (**
-Some more info
 
 Samples & documentation
 -----------------------
 
-The library comes with comprehensible documentation. 
-It can include tutorials automatically generated from `*.fsx` files in [the content folder][content]. 
-The API reference is automatically generated from Markdown comments in the library implementation.
+The following are available as documentation.  Please note that the documentation is currently under
+active development.
 
  * [Tutorial](tutorial.html) contains a further explanation of this sample library.
 
@@ -55,13 +59,12 @@ the project and submit pull requests. If you're adding a new public API, please 
 consider adding [samples][content] that can be turned into a documentation. You might
 also want to read the [library design notes][readme] to understand how it works.
 
-The library is available under Public Domain license, which allows modification and 
-redistribution for both commercial and non-commercial purposes. For more information see the 
+For license information see the 
 [License file][license] in the GitHub repository. 
 
-  [content]: https://github.com/fsprojects/FsPretty/tree/master/docs/content
-  [gh]: https://github.com/fsprojects/FsPretty
-  [issues]: https://github.com/fsprojects/FsPretty/issues
-  [readme]: https://github.com/fsprojects/FsPretty/blob/master/README.md
-  [license]: https://github.com/fsprojects/FsPretty/blob/master/LICENSE.txt
+  [content]: https://github.com/mjsottile/FsPretty/tree/master/docs/content
+  [gh]: https://github.com/mjsottile/FsPretty
+  [issues]: https://github.com/mjsottile/FsPretty/issues
+  [readme]: https://github.com/mjsottile/FsPretty/blob/master/README.md
+  [license]: https://github.com/mjsottile/FsPretty/blob/master/LICENSE.txt
 *)
