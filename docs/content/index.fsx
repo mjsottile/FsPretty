@@ -33,7 +33,7 @@ For example, a list of integers can be turned into a tuple via:
 open FsPretty.PrettyPrint
 
 let mylist = List.map mkint [1;2;3]
-             |> encloseSep lbracket rbracket semi
+             |> encloseSep lparen rparen comma
 
 printfn "mylist = %S" <| displayString mylist
 
