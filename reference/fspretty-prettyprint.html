@@ -1,0 +1,1530 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>PrettyPrint - FsPretty</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content=""/>
+    <meta name="author" content="Matthew Sottile"/>
+
+    <script src="https://code.jquery.com/jquery-1.8.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.8.23/jquery-ui.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/js/bootstrap.min.js"></script>
+    <link href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.2.1/css/bootstrap-combined.min.css" rel="stylesheet"/>
+
+    <link type="text/css" rel="stylesheet" href="/FsPretty/content/style.css" />
+    <script type="text/javascript" src="/FsPretty/content/tips.js"></script>
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="container">
+      <div class="masthead">
+        <ul class="nav nav-pills pull-right">
+          <li><a href="http://fsharp.org">fsharp.org</a></li>
+          <li><a href="http://github.com/mjsottile/FsPretty">github page</a></li>
+        </ul>
+        <h3 class="muted"><a href="/FsPretty/index.html">FsPretty</a></h3>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="span9" id="main">
+          
+
+
+
+<h1>PrettyPrint</h1>
+<div class="xmldoc">
+</div>
+
+<!-- Render nested types and modules, if there are any -->
+  <h2>Nested types and modules</h2>
+  <div>
+      <table class="table table-bordered type-list">
+    <thead>
+      <tr><td>Type</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td class="type-name">
+            <a href="fspretty-prettyprint-doc.html">Doc</a>
+          </td>
+          <td class="xmldoc"></td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="fspretty-prettyprint-docs.html">Docs</a>
+          </td>
+          <td class="xmldoc"></td>
+        </tr>
+        <tr>
+          <td class="type-name">
+            <a href="fspretty-prettyprint-simpledoc.html">SimpleDoc</a>
+          </td>
+          <td class="xmldoc"></td>
+        </tr>
+    </tbody>
+  </table>
+
+  </div>
+
+  <h3>Functions and values</h3>
+  <table class="table table-bordered member-list">
+    <thead>
+      <tr><td>Function or value</td><td>Description</td></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '1', 1)" onmouseover="showTip(event, '1', 1)">
+            ( &lt;**&gt; ) x y
+          </code>
+          <div class="tip" id="1">
+            <strong>Signature:</strong> x:Doc -&gt; y:Doc -&gt; Doc<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L168-168" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Concatenate two Doc objects, separating them with a line break.  This function was <$$>
+in Haskell.</p>
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '2', 2)" onmouseover="showTip(event, '2', 2)">
+            ( &lt;*&gt; ) x y
+          </code>
+          <div class="tip" id="2">
+            <strong>Signature:</strong> x:Doc -&gt; y:Doc -&gt; Doc<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L164-164" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Concatenate two Doc objects, separating them with a line.  This function was <$>
+in Haskell.</p>
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '3', 3)" onmouseover="showTip(event, '3', 3)">
+            ( &lt;//&gt; ) x y
+          </code>
+          <div class="tip" id="3">
+            <strong>Signature:</strong> x:Doc -&gt; y:Doc -&gt; Doc<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L191-191" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '4', 4)" onmouseover="showTip(event, '4', 4)">
+            ( &lt;/&gt; ) x y
+          </code>
+          <div class="tip" id="4">
+            <strong>Signature:</strong> x:Doc -&gt; y:Doc -&gt; Doc<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L189-189" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '5', 5)" onmouseover="showTip(event, '5', 5)">
+            ( &lt;+&gt; ) x y
+          </code>
+          <div class="tip" id="5">
+            <strong>Signature:</strong> x:Doc -&gt; y:Doc -&gt; Doc<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L154-154" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Concatenate two Doc objects, separated by a single space.</p>
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '6', 6)" onmouseover="showTip(event, '6', 6)">
+            ( &lt;&lt;&gt;&gt; ) x y
+          </code>
+          <div class="tip" id="6">
+            <strong>Signature:</strong> x:Doc -&gt; y:Doc -&gt; Doc<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L55-55" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Infix notation for beside.  In haskell this is <>, but this collides 
+poorly with <> in F# so it was renamed.</p>
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '7', 7)" onmouseover="showTip(event, '7', 7)">
+            align d
+          </code>
+          <div class="tip" id="7">
+            <strong>Signature:</strong> d:Doc -&gt; Doc<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L241-241" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '8', 8)" onmouseover="showTip(event, '8', 8)">
+            angles 
+          </code>
+          <div class="tip" id="8">
+            <strong>Signature:</strong> Doc -&gt; Doc<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L210-210" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Enclose a Doc in angle brackets.</p>
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '9', 9)" onmouseover="showTip(event, '9', 9)">
+            backslash 
+          </code>
+          <div class="tip" id="9">
+            <strong>Signature:</strong> Doc<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L98-98" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>'\' character.</p>
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '10', 10)" onmouseover="showTip(event, '10', 10)">
+            beside x y
+          </code>
+          <div class="tip" id="10">
+            <strong>Signature:</strong> x:Doc -&gt; y:Doc -&gt; Doc<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L51-51" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Place two documents side-by-side</p>
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '11', 11)" onmouseover="showTip(event, '11', 11)">
+            braces 
+          </code>
+          <div class="tip" id="11">
+            <strong>Signature:</strong> Doc -&gt; Doc<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L216-216" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Enclose a Doc in braces.</p>
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '12', 12)" onmouseover="showTip(event, '12', 12)">
+            brackets 
+          </code>
+          <div class="tip" id="12">
+            <strong>Signature:</strong> Doc -&gt; Doc<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L207-207" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Enclose a Doc in brackets.</p>
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '13', 13)" onmouseover="showTip(event, '13', 13)">
+            cat 
+          </code>
+          <div class="tip" id="13">
+            <strong>Signature:</strong> Doc list -&gt; Doc<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L230-230" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '14', 14)" onmouseover="showTip(event, '14', 14)">
+            colon 
+          </code>
+          <div class="tip" id="14">
+            <strong>Signature:</strong> Doc<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L110-110" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>':' character.</p>
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '15', 15)" onmouseover="showTip(event, '15', 15)">
+            column f
+          </code>
+          <div class="tip" id="15">
+            <strong>Signature:</strong> f:(int -&gt; Doc) -&gt; Doc<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L226-226" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '16', 16)" onmouseover="showTip(event, '16', 16)">
+            comma 
+          </code>
+          <div class="tip" id="16">
+            <strong>Signature:</strong> Doc<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L107-107" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>',' character.</p>
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '17', 17)" onmouseover="showTip(event, '17', 17)">
+            displayS _arg1
+          </code>
+          <div class="tip" id="17">
+            <strong>Signature:</strong> _arg1:SimpleDoc -&gt; string<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L321-321" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Render a SimpleDoc as a string.</p>
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '18', 18)" onmouseover="showTip(event, '18', 18)">
+            displayString s
+          </code>
+          <div class="tip" id="18">
+            <strong>Signature:</strong> s:Doc -&gt; string<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L328-328" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Render a Doc as a string assuming an 80 column width.</p>
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '19', 19)" onmouseover="showTip(event, '19', 19)">
+            displayStringW w s
+          </code>
+          <div class="tip" id="19">
+            <strong>Signature:</strong> w:int -&gt; s:Doc -&gt; string<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L331-331" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Render a Doc as a string with a given width w.</p>
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '20', 20)" onmouseover="showTip(event, '20', 20)">
+            dot 
+          </code>
+          <div class="tip" id="20">
+            <strong>Signature:</strong> Doc<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L95-95" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>'.' character.</p>
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '21', 21)" onmouseover="showTip(event, '21', 21)">
+            dquote 
+          </code>
+          <div class="tip" id="21">
+            <strong>Signature:</strong> Doc<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L116-116" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>'"' character.</p>
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '22', 22)" onmouseover="showTip(event, '22', 22)">
+            dquotes 
+          </code>
+          <div class="tip" id="22">
+            <strong>Signature:</strong> Doc -&gt; Doc<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L219-219" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Enclose a Doc in double quotes.</p>
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '23', 23)" onmouseover="showTip(event, '23', 23)">
+            empty 
+          </code>
+          <div class="tip" id="23">
+            <strong>Signature:</strong> Doc<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L38-38" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>The empty document.</p>
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '24', 24)" onmouseover="showTip(event, '24', 24)">
+            enclose l r x
+          </code>
+          <div class="tip" id="24">
+            <strong>Signature:</strong> l:Doc -&gt; r:Doc -&gt; x:Doc -&gt; Doc<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L204-204" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Surround a Doc by a left and a right Doc.</p>
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '25', 25)" onmouseover="showTip(event, '25', 25)">
+            encloseSep left right sep ds
+          </code>
+          <div class="tip" id="25">
+            <strong>Signature:</strong> left:Doc -&gt; right:Doc -&gt; sep:Doc -&gt; ds:Doc list -&gt; Doc<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L245-245" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Enclose a list of Doc objects between a left and right Doc, and
+separate the list elements with the given separator Doc.</p>
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '26', 26)" onmouseover="showTip(event, '26', 26)">
+            equals 
+          </code>
+          <div class="tip" id="26">
+            <strong>Signature:</strong> Doc<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L101-101" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>'=' character.</p>
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '27', 27)" onmouseover="showTip(event, '27', 27)">
+            fill f d
+          </code>
+          <div class="tip" id="27">
+            <strong>Signature:</strong> f:int -&gt; d:Doc -&gt; Doc<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L239-239" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '28', 28)" onmouseover="showTip(event, '28', 28)">
+            fillBreak f x
+          </code>
+          <div class="tip" id="28">
+            <strong>Signature:</strong> f:int -&gt; x:Doc -&gt; Doc<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L267-267" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '29', 29)" onmouseover="showTip(event, '29', 29)">
+            fillCat 
+          </code>
+          <div class="tip" id="29">
+            <strong>Signature:</strong> Doc list -&gt; Doc<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L201-201" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '30', 30)" onmouseover="showTip(event, '30', 30)">
+            fillSep 
+          </code>
+          <div class="tip" id="30">
+            <strong>Signature:</strong> Doc list -&gt; Doc<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L195-195" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '31', 31)" onmouseover="showTip(event, '31', 31)">
+            fits w _arg1
+          </code>
+          <div class="tip" id="31">
+            <strong>Signature:</strong> w:int -&gt; _arg1:SimpleDoc -&gt; bool<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L278-278" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '32', 32)" onmouseover="showTip(event, '32', 32)">
+            flatten _arg1
+          </code>
+          <div class="tip" id="32">
+            <strong>Signature:</strong> _arg1:Doc -&gt; Doc<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L174-174" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '33', 33)" onmouseover="showTip(event, '33', 33)">
+            fold f _arg1
+          </code>
+          <div class="tip" id="33">
+            <strong>Signature:</strong> f:(Doc -&gt; Doc -&gt; Doc) -&gt; _arg1:Doc list -&gt; Doc<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L158-158" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Fold specialized to Doc types.  Accepts only functions of type Doc -> Doc -> Doc,
+and returns the empty Doc when an empty list is provided.</p>
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '34', 34)" onmouseover="showTip(event, '34', 34)">
+            group x
+          </code>
+          <div class="tip" id="34">
+            <strong>Signature:</strong> x:Doc -&gt; Doc<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L183-183" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '35', 35)" onmouseover="showTip(event, '35', 35)">
+            hang i d
+          </code>
+          <div class="tip" id="35">
+            <strong>Signature:</strong> i:int -&gt; d:Doc -&gt; Doc<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L263-263" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '36', 36)" onmouseover="showTip(event, '36', 36)">
+            hcat 
+          </code>
+          <div class="tip" id="36">
+            <strong>Signature:</strong> Doc list -&gt; Doc<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L199-199" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '37', 37)" onmouseover="showTip(event, '37', 37)">
+            hsep 
+          </code>
+          <div class="tip" id="37">
+            <strong>Signature:</strong> Doc list -&gt; Doc<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L197-197" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '38', 38)" onmouseover="showTip(event, '38', 38)">
+            indent i d
+          </code>
+          <div class="tip" id="38">
+            <strong>Signature:</strong> i:int -&gt; d:Doc -&gt; Doc<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L265-265" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '39', 39)" onmouseover="showTip(event, '39', 39)">
+            indentation 
+          </code>
+          <div class="tip" id="39">
+            <strong>Signature:</strong> int -&gt; string<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L151-151" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Indentation is an alias for spaces.</p>
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '40', 40)" onmouseover="showTip(event, '40', 40)">
+            langle 
+          </code>
+          <div class="tip" id="40">
+            <strong>Signature:</strong> Doc<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L143-143" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>'&lt;' character.</p>
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '41', 41)" onmouseover="showTip(event, '41', 41)">
+            lbrace 
+          </code>
+          <div class="tip" id="41">
+            <strong>Signature:</strong> Doc<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L131-131" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>'{' character.</p>
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '42', 42)" onmouseover="showTip(event, '42', 42)">
+            lbracket 
+          </code>
+          <div class="tip" id="42">
+            <strong>Signature:</strong> Doc<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L125-125" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>'[' character.</p>
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '43', 43)" onmouseover="showTip(event, '43', 43)">
+            line 
+          </code>
+          <div class="tip" id="43">
+            <strong>Signature:</strong> Doc<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L40-40" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '44', 44)" onmouseover="showTip(event, '44', 44)">
+            linebreak 
+          </code>
+          <div class="tip" id="44">
+            <strong>Signature:</strong> Doc<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L42-42" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '45', 45)" onmouseover="showTip(event, '45', 45)">
+            lparen 
+          </code>
+          <div class="tip" id="45">
+            <strong>Signature:</strong> Doc<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L137-137" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>'(' character.</p>
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '46', 46)" onmouseover="showTip(event, '46', 46)">
+            mkbool _arg1
+          </code>
+          <div class="tip" id="46">
+            <strong>Signature:</strong> _arg1:bool -&gt; Doc<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L81-81" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Lift a bool into the Doc type.</p>
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '47', 47)" onmouseover="showTip(event, '47', 47)">
+            mkchar c
+          </code>
+          <div class="tip" id="47">
+            <strong>Signature:</strong> c:char -&gt; Doc<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L75-75" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Lift a char into the Doc type.</p>
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '48', 48)" onmouseover="showTip(event, '48', 48)">
+            mkdouble d
+          </code>
+          <div class="tip" id="48">
+            <strong>Signature:</strong> d:double -&gt; Doc<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L92-92" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Lift a double into the Doc type.</p>
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '49', 49)" onmouseover="showTip(event, '49', 49)">
+            mkfloat f
+          </code>
+          <div class="tip" id="49">
+            <strong>Signature:</strong> f:float -&gt; Doc<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L89-89" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Lift a float into the Doc type.</p>
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '50', 50)" onmouseover="showTip(event, '50', 50)">
+            mkint i
+          </code>
+          <div class="tip" id="50">
+            <strong>Signature:</strong> i:int -&gt; Doc<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L86-86" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Lift an integer into the Doc type.</p>
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '51', 51)" onmouseover="showTip(event, '51', 51)">
+            mklist 
+          </code>
+          <div class="tip" id="51">
+            <strong>Signature:</strong> Doc list -&gt; Doc<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L257-257" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Treat a list of Docs as a list [d1,d2,...,dN]</p>
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '52', 52)" onmouseover="showTip(event, '52', 52)">
+            mkstring s
+          </code>
+          <div class="tip" id="52">
+            <strong>Signature:</strong> s:string -&gt; Doc<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L65-65" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Given a string with one or more lines of text separated by newline
+characters, create a sequence of Doc objects for each line and then
+fold the resulting Doc objects together with the <<>> operator
+with a line between each.</p>
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '53', 53)" onmouseover="showTip(event, '53', 53)">
+            nest i x
+          </code>
+          <div class="tip" id="53">
+            <strong>Signature:</strong> i:int -&gt; x:Doc -&gt; Doc<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L224-224" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '54', 54)" onmouseover="showTip(event, '54', 54)">
+            nesting f
+          </code>
+          <div class="tip" id="54">
+            <strong>Signature:</strong> f:(int -&gt; Doc) -&gt; Doc<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L227-227" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '55', 55)" onmouseover="showTip(event, '55', 55)">
+            parens 
+          </code>
+          <div class="tip" id="55">
+            <strong>Signature:</strong> Doc -&gt; Doc<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L213-213" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Enclose a Doc in parenthesis.</p>
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '56', 56)" onmouseover="showTip(event, '56', 56)">
+            punctuate p _arg1
+          </code>
+          <div class="tip" id="56">
+            <strong>Signature:</strong> p:Doc -&gt; _arg1:Doc list -&gt; Doc list<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L232-232" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '57', 57)" onmouseover="showTip(event, '57', 57)">
+            rangle 
+          </code>
+          <div class="tip" id="57">
+            <strong>Signature:</strong> Doc<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L140-140" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>'>' character.</p>
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '58', 58)" onmouseover="showTip(event, '58', 58)">
+            rbrace 
+          </code>
+          <div class="tip" id="58">
+            <strong>Signature:</strong> Doc<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L128-128" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>'}' character.</p>
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '59', 59)" onmouseover="showTip(event, '59', 59)">
+            rbracket 
+          </code>
+          <div class="tip" id="59">
+            <strong>Signature:</strong> Doc<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L122-122" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>']' character.</p>
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '60', 60)" onmouseover="showTip(event, '60', 60)">
+            renderCompact x
+          </code>
+          <div class="tip" id="60">
+            <strong>Signature:</strong> x:Doc -&gt; SimpleDoc<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L305-305" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '61', 61)" onmouseover="showTip(event, '61', 61)">
+            renderPretty rfrac w x
+          </code>
+          <div class="tip" id="61">
+            <strong>Signature:</strong> rfrac:float -&gt; w:int -&gt; x:Doc -&gt; SimpleDoc<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L285-285" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '62', 62)" onmouseover="showTip(event, '62', 62)">
+            rparen 
+          </code>
+          <div class="tip" id="62">
+            <strong>Signature:</strong> Doc<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L134-134" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>')' character.</p>
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '63', 63)" onmouseover="showTip(event, '63', 63)">
+            semi 
+          </code>
+          <div class="tip" id="63">
+            <strong>Signature:</strong> Doc<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L113-113" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>';' character.</p>
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '64', 64)" onmouseover="showTip(event, '64', 64)">
+            semiBraces 
+          </code>
+          <div class="tip" id="64">
+            <strong>Signature:</strong> Doc list -&gt; Doc<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L261-261" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Treat a list of Docs as a semi-colon separated sequence between braces,
+such as {d1;d2;...;dN}</p>
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '65', 65)" onmouseover="showTip(event, '65', 65)">
+            sep 
+          </code>
+          <div class="tip" id="65">
+            <strong>Signature:</strong> Doc list -&gt; Doc<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L229-229" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '66', 66)" onmouseover="showTip(event, '66', 66)">
+            softbreak 
+          </code>
+          <div class="tip" id="66">
+            <strong>Signature:</strong> Doc<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L187-187" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '67', 67)" onmouseover="showTip(event, '67', 67)">
+            softline 
+          </code>
+          <div class="tip" id="67">
+            <strong>Signature:</strong> Doc<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L185-185" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '68', 68)" onmouseover="showTip(event, '68', 68)">
+            space 
+          </code>
+          <div class="tip" id="68">
+            <strong>Signature:</strong> Doc<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L104-104" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>' ' character.</p>
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '69', 69)" onmouseover="showTip(event, '69', 69)">
+            spaces _arg1
+          </code>
+          <div class="tip" id="69">
+            <strong>Signature:</strong> _arg1:int -&gt; string<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L146-146" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Produce a string with n spaces.</p>
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '70', 70)" onmouseover="showTip(event, '70', 70)">
+            squote 
+          </code>
+          <div class="tip" id="70">
+            <strong>Signature:</strong> Doc<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L119-119" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>''' character.</p>
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '71', 71)" onmouseover="showTip(event, '71', 71)">
+            squotes 
+          </code>
+          <div class="tip" id="71">
+            <strong>Signature:</strong> Doc -&gt; Doc<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L222-222" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Enclose a Doc in single quotes.</p>
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '72', 72)" onmouseover="showTip(event, '72', 72)">
+            text s
+          </code>
+          <div class="tip" id="72">
+            <strong>Signature:</strong> s:string -&gt; Doc<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L45-45" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Lift a string into the Doc type.</p>
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '73', 73)" onmouseover="showTip(event, '73', 73)">
+            tupled 
+          </code>
+          <div class="tip" id="73">
+            <strong>Signature:</strong> Doc list -&gt; Doc<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L254-254" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Treat a list of Docs as a tuple (d1,d2,...,dN)</p>
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '74', 74)" onmouseover="showTip(event, '74', 74)">
+            vcat 
+          </code>
+          <div class="tip" id="74">
+            <strong>Signature:</strong> Doc list -&gt; Doc<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L171-171" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Vertical concatenation of a list of Docs.</p>
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '75', 75)" onmouseover="showTip(event, '75', 75)">
+            vsep 
+          </code>
+          <div class="tip" id="75">
+            <strong>Signature:</strong> Doc list -&gt; Doc<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L193-193" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '76', 76)" onmouseover="showTip(event, '76', 76)">
+            width d f
+          </code>
+          <div class="tip" id="76">
+            <strong>Signature:</strong> d:Doc -&gt; f:(int -&gt; Doc) -&gt; Doc<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/mjsottile/FsPretty/tree/master/src/FsPretty/Library.fs#L237-237" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+        </div>
+        <div class="span3">
+          <img src="/FsPretty/img/logo.png" alt="F# Project" style="width:150px;margin:10px" />  
+          <ul class="nav nav-list" id="menu" style="margin-top: 20px;">
+            <li class="nav-header">FsPretty</li>
+            <li><a href="/FsPretty/index.html">Home page</a></li>
+            <li class="divider"></li>
+            <li><a href="http://nuget.org/packages/FsPretty">Get Library via NuGet</a></li>
+            <li><a href="http://github.com/mjsottile/FsPretty">Source Code on GitHub</a></li>
+            <li><a href="/FsPretty/license.html">License</a></li>
+            <li><a href="/FsPretty/release-notes.html">Release Notes</a></li>
+            
+            <li class="nav-header">Getting started</li>
+            <li><a href="/FsPretty/tutorial.html">Sample tutorial</a></li>
+
+            <li class="nav-header">Documentation</li>
+            <li><a href="/FsPretty/reference/index.html">API Reference</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <a href="http://github.com/mjsottile/FsPretty"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"/></a>
+  </body>
+  </html>
