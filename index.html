@@ -35,7 +35,9 @@
           
 <h1><a name="FsPretty" class="anchor" href="#FsPretty">FsPretty</a></h1>
 
-<p>Documentation</p>
+<p>This library is an implementation of the pretty printer combinator library described by Philip Wadler in
+"A Prettier Printer", (available at <A HREF="http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.19.635">CiteSeer</A>).
+It is based on the Haskell wl-pprint implementation.</p>
 
 <div class="row">
   <div class="span1"></div>
@@ -50,32 +52,36 @@
 
 <h2><a name="Example" class="anchor" href="#Example">Example</a></h2>
 
-<p>This example demonstrates using a function defined in this sample library.</p>
+<p>The goal of the library is to allow documents to be assembled easily via a set of functional combinators.
+For example, a list of integers can be turned into a tuple via:</p>
 
 <table class="pre"><tr><td class="lines"><pre class="fssnip">
 <span class="l">1: </span>
 <span class="l">2: </span>
 <span class="l">3: </span>
 <span class="l">4: </span>
+<span class="l">5: </span>
+<span class="l">6: </span>
+<span class="l">7: </span>
 </pre>
 </td>
 <td class="snippet"><pre class="fssnip">
 <span class="prep">#r</span> <span class="s">&quot;FsPretty.dll&quot;</span>
-<span class="k">open</span> <span class="i">FsPretty</span>
+<span class="k">open</span> <span class="i">FsPretty</span><span class="o">.</span><span class="i">PrettyPrint</span>
 
-<span onmouseout="hideTip(event, 'fs1', 1)" onmouseover="showTip(event, 'fs1', 1)" class="f">printfn</span> <span class="s">&quot;hello = </span><span class="pf">%i</span><span class="s">&quot;</span> <span class="o">&lt;|</span> <span class="i">Library</span><span class="o">.</span><span class="i">hello</span> <span class="n">0</span>
+<span class="k">let</span> <span onmouseout="hideTip(event, 'fs1', 1)" onmouseover="showTip(event, 'fs1', 1)" class="i">mylist</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs2', 2)" onmouseover="showTip(event, 'fs2', 2)" class="t">List</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs3', 3)" onmouseover="showTip(event, 'fs3', 3)" class="f">map</span> <span class="i">mkint</span> [<span class="n">1</span>;<span class="n">2</span>;<span class="n">3</span>]
+             <span class="o">|&gt;</span> <span class="i">encloseSep</span> <span class="i">lbracket</span> <span class="i">rbracket</span> <span class="i">semi</span>
+
+<span onmouseout="hideTip(event, 'fs4', 4)" onmouseover="showTip(event, 'fs4', 4)" class="f">printfn</span> <span class="s">&quot;mylist = %S&quot;</span> <span class="o">&lt;|</span> <span class="i">displayString</span> <span onmouseout="hideTip(event, 'fs1', 5)" onmouseover="showTip(event, 'fs1', 5)" class="i">mylist</span>
 </pre>
 </td>
 </tr>
 </table>
 
-<p>Some more info</p>
-
 <h2><a name="Samples-amp-documentation" class="anchor" href="#Samples-amp-documentation">Samples &amp; documentation</a></h2>
 
-<p>The library comes with comprehensible documentation. 
-It can include tutorials automatically generated from <code>*.fsx</code> files in <a href="https://github.com/fsprojects/FsPretty/tree/master/docs/content">the content folder</a>. 
-The API reference is automatically generated from Markdown comments in the library implementation.</p>
+<p>The following are available as documentation.  Please note that the documentation is currently under
+active development.</p>
 
 <ul>
 <li><p><a href="tutorial.html">Tutorial</a> contains a further explanation of this sample library.</p></li>
@@ -91,11 +97,13 @@ the project and submit pull requests. If you're adding a new public API, please 
 consider adding <a href="https://github.com/fsprojects/FsPretty/tree/master/docs/content">samples</a> that can be turned into a documentation. You might
 also want to read the <a href="https://github.com/fsprojects/FsPretty/blob/master/README.md">library design notes</a> to understand how it works.</p>
 
-<p>The library is available under Public Domain license, which allows modification and 
-redistribution for both commercial and non-commercial purposes. For more information see the 
+<p>For license information see the 
 <a href="https://github.com/fsprojects/FsPretty/blob/master/LICENSE.txt">License file</a> in the GitHub repository.</p>
 
-<div class="tip" id="fs1">val printfn : format:Printf.TextWriterFormat&lt;&#39;T&gt; -&gt; &#39;T<br /><br />Full name: Microsoft.FSharp.Core.ExtraTopLevelOperators.printfn</div>
+<div class="tip" id="fs1">val mylist : obj<br /><br />Full name: Index.mylist</div>
+<div class="tip" id="fs2">Multiple items<br />module List<br /><br />from Microsoft.FSharp.Collections<br /><br />--------------------<br />type List&lt;&#39;T&gt; =<br />&#160;&#160;| ( [] )<br />&#160;&#160;| ( :: ) of Head: &#39;T * Tail: &#39;T list<br />&#160;&#160;interface IEnumerable<br />&#160;&#160;interface IEnumerable&lt;&#39;T&gt;<br />&#160;&#160;member Head : &#39;T<br />&#160;&#160;member IsEmpty : bool<br />&#160;&#160;member Item : index:int -&gt; &#39;T with get<br />&#160;&#160;member Length : int<br />&#160;&#160;member Tail : &#39;T list<br />&#160;&#160;static member Cons : head:&#39;T * tail:&#39;T list -&gt; &#39;T list<br />&#160;&#160;static member Empty : &#39;T list<br /><br />Full name: Microsoft.FSharp.Collections.List&lt;_&gt;</div>
+<div class="tip" id="fs3">val map : mapping:(&#39;T -&gt; &#39;U) -&gt; list:&#39;T list -&gt; &#39;U list<br /><br />Full name: Microsoft.FSharp.Collections.List.map</div>
+<div class="tip" id="fs4">val printfn : format:Printf.TextWriterFormat&lt;&#39;T&gt; -&gt; &#39;T<br /><br />Full name: Microsoft.FSharp.Core.ExtraTopLevelOperators.printfn</div>
 
         </div>
         <div class="span3">
