@@ -34,26 +34,34 @@ module PrettyPrint =
         | SText of int * string * SimpleDoc
         | SLine of int * SimpleDoc
 
+    /// The empty document.
     let empty = Empty
 
     let line = Line false
 
     let linebreak = Line true
 
+    /// Lift a string into the Doc type.
     let text (s:string) =
         match s.Length with
         | 0 -> Empty
         | l -> Text (l, s)
 
+    /// Place two documents side-by-side
     let beside x y = Cat (x,y)
 
-    // in haskell this is <>, but this collides poorly with <> in F#
+    /// Infix notation for beside.  In haskell this is <>, but this collides 
+    /// poorly with <> in F# so it was renamed.
     let inline (<<>>) (x:Doc) (y:Doc) = beside x y
 
     // to avoid issues with existing functions like int and float
     // those are renamed to mkint and mkfloat.  then, to keep these
     // functions consistent, the others are also prefaced with "mk"
 
+    /// Given a string with one or more lines of text separated by newline
+    /// characters, create a sequence of Doc objects for each line and then
+    /// fold the resulting Doc objects together with the <<>> operator
+    /// with a line between each.
     let rec mkstring (s:string) =
         let parts = s.Split([|'\n'|])
                     |> Array.map text
@@ -63,55 +71,103 @@ module PrettyPrint =
         | _ -> Array.fold (fun (x:Doc) (y:Doc) -> x <<>> line <<>> y)
                           parts.[0] parts.[1..]
 
+    /// Lift a char into the Doc type.
     let mkchar c =
         match c with
         | '\n' -> line
         | c -> Char c
 
+    /// Lift a bool into the Doc type.
     let mkbool = function
         | true -> text "True"
         | false -> text "False"
 
+    /// Lift an integer into the Doc type.
     let mkint (i:int) = string i |> text
 
+    /// Lift a float into the Doc type.
     let mkfloat (f:float) = string f |> text
 
+    /// Lift a double into the Doc type.
     let mkdouble (d:double) = string d |> text
 
+    /// '.' character.
     let dot       = mkchar '.'
+
+    /// '\' character.
     let backslash = mkchar '\\'
+
+    /// '=' character.
     let equals    = mkchar '='
+
+    /// ' ' character.
     let space     = mkchar ' '
+
+    /// ',' character.
     let comma     = mkchar ','
+
+    /// ':' character.
     let colon     = mkchar ':'
+
+    /// ';' character.
     let semi      = mkchar ';'
+
+    /// '"' character.
     let dquote    = mkchar '"' // hacky fix for syntax highligher stupidity -> "
+
+    /// ''' character.
     let squote    = mkchar '\''
+
+    /// ']' character.
     let rbracket  = mkchar ']'
+
+    /// '[' character.
     let lbracket  = mkchar '['
+
+    /// '}' character.
     let rbrace    = mkchar '}'
+
+    /// '{' character.
     let lbrace    = mkchar '{'
+
+    /// ')' character.
     let rparen    = mkchar ')'
+
+    /// '(' character.
     let lparen    = mkchar '('
+
+    /// '>' character.
     let rangle    = mkchar '>'
+
+    /// '<' character.
     let langle    = mkchar '<'
 
+    /// Produce a string with n spaces.
     let spaces = function
         | n when n <= 0 -> ""
         | n             -> String.replicate n " "
 
+    /// Indentation is an alias for spaces.
     let indentation = spaces
 
+    /// Concatenate two Doc objects, separated by a single space.
     let inline (<+>) (x:Doc) (y:Doc) = x <<>> space <<>> y
 
+    /// Fold specialized to Doc types.  Accepts only functions of type Doc -> Doc -> Doc,
+    /// and returns the empty Doc when an empty list is provided.
     let fold f = function
         | []    -> empty
         | x::xs -> List.fold f x xs
 
-    // <$> and <$$> in haskell, <*> and <**> in F#
+    /// Concatenate two Doc objects, separating them with a line.  This function was <$>
+    /// in Haskell.
     let inline (<*>) x y = x <<>> line <<>> y
+
+    /// Concatenate two Doc objects, separating them with a line break.  This function was <$$>
+    /// in Haskell.
     let inline (<**>) x y = x <<>> linebreak <<>> y
 
+    /// Vertical concatenation of a list of Docs.
     let vcat = fold (<**>)
 
     // break in Haskell is isbreak in F# due to reserved word collision
@@ -144,18 +200,25 @@ module PrettyPrint =
 
     let fillCat = fold (<//>)
 
+    /// Surround a Doc by a left and a right Doc.
     let enclose l r x = l <<>> x <<>> r
 
+    /// Enclose a Doc in brackets.
     let brackets = enclose lbracket rbracket
 
+    /// Enclose a Doc in angle brackets.
     let angles = enclose langle rangle
 
+    /// Enclose a Doc in parenthesis.
     let parens = enclose lparen rparen
 
+    /// Enclose a Doc in braces. 
     let braces = enclose lbrace rbrace
 
+    /// Enclose a Doc in double quotes.
     let dquotes = enclose dquote dquote
 
+    /// Enclose a Doc in single quotes.
     let squotes = enclose squote squote
 
     let nest i x = Nest (i,x)
@@ -177,6 +240,8 @@ module PrettyPrint =
 
     let align d = column (fun k -> nesting (fun i -> nest (k-i) d))
 
+    /// Enclose a list of Doc objects between a left and right Doc, and
+    /// separate the list elements with the given separator Doc.
     let encloseSep left right sep ds =
         match ds with
         | []    -> left <<>> right
@@ -185,10 +250,14 @@ module PrettyPrint =
                    let ls = left :: (List.replicate (n-1) sep)
                    align (cat (List.map2 (<<>>) ls ds) <<>> right)
 
+    /// Treat a list of Docs as a tuple (d1,d2,...,dN)
     let tupled = encloseSep lparen rparen comma
 
+    /// Treat a list of Docs as a list [d1,d2,...,dN]
     let mklist = encloseSep lbracket rbracket comma
 
+    /// Treat a list of Docs as a semi-colon separated sequence between braces,
+    /// such as {d1;d2;...;dN}
     let semiBraces = encloseSep lbrace rbrace semi
 
     let hang i d = align (nest i d)
@@ -248,13 +317,16 @@ module PrettyPrint =
                    | Nesting f   -> scan k (f 0::ds)
         scan 0 [x]
 
+    /// Render a SimpleDoc as a string.
     let rec displayS = function
         | SEmpty        -> ""
         | SChar (c,x)   -> string(c) + (displayS x)
         | SText (l,s,x) -> s + (displayS x)
         | SLine (i,x)   -> "\n"+(indentation i)+(displayS x)
 
+    /// Render a Doc as a string assuming an 80 column width.
     let displayString s = renderPretty 0.4 80 s |> displayS
 
+    /// Render a Doc as a string with a given width w.
     let displayStringW w s = renderPretty 0.4 w s |> displayS
 
