@@ -9,7 +9,7 @@ as well as disallowed characters in infix operator names.  The code is
 rearranged from the order in the Haskell such that definitions occur before
 their use.
 
-Author: Matthew Sottile <matt@sailfan.co>
+Author: Matthew Sottile <mjsottile@me.com>
 
 March 2015
 
