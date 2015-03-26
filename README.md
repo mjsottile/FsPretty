@@ -1,5 +1,7 @@
 # FsPretty
 
+[![Build Status](https://travis-ci.org/mjsottile/FsPretty.svg?branch=master)](https://travis-ci.org/mjsottile/FsPretty)
+
 This is an FSharp implementation of the pretty printer library
 described in "A Prettier Printer" by Philip Wadler (see:
 http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.19.635 for the
