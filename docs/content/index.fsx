@@ -35,7 +35,7 @@ open FsPretty.PrettyPrint
 let mylist = List.map mkint [1;2;3]
              |> encloseSep lparen rparen comma
 
-printfn "mylist = %S" <| displayString mylist
+printfn "mylist = %s" <| displayString mylist
 
 (**
 
