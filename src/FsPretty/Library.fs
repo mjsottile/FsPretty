@@ -195,8 +195,10 @@ module PrettyPrint =
 
     let fillSep = fold (</>)
 
+    /// Horizontally concatenate a list of Doc objects separated by spaces.
     let hsep = fold (<+>)
 
+    /// Horizontally concatenate a list of Doc objects.
     let hcat = fold (<<>>)
 
     let fillCat = fold (<//>)
@@ -263,6 +265,7 @@ module PrettyPrint =
 
     let hang i d = align (nest i d)
 
+    /// Indent a Doc by the given number of spaces.
     let indent i d = hang i (text (spaces i) <<>> d)
 
     let fillBreak f x = width x (fun w -> if w > f then nest f linebreak
