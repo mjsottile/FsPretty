@@ -3,6 +3,7 @@ namespace FsPretty
 (*
 
 Port of wl-pprint pretty printing library from Haskell to FSharp.
+
 The code is a very direct translation with minimal changes other than
 some renaming due to collisions with existing F# functions and operators,
 as well as disallowed characters in infix operator names.  The code is
