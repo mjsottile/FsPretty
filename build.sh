@@ -19,6 +19,9 @@ then
   [ ! -e build.fsx ] && packages/FAKE/tools/FAKE.exe init.fsx
   packages/FAKE/tools/FAKE.exe $@ --fsiargs -d:MONO build.fsx 
 else
+  # fix test fsproj file
+  mv tests/FsPretty.Tests/FsPretty.Tests.fsproj.mono tests/FsPretty.Tests/FsPretty.Tests.fsproj  
+    
   # use mono
   mono .paket/paket.bootstrapper.exe
   exit_code=$?
