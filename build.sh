@@ -20,6 +20,7 @@ then
   packages/FAKE/tools/FAKE.exe $@ --fsiargs -d:MONO build.fsx 
 else
   # fix test fsproj file
+  mv tests/FsPretty.Tests/FsPretty.Tests.fsproj tests/FsPretty.Tests/FsPretty.Tests.fsproj.vs
   mv tests/FsPretty.Tests/FsPretty.Tests.fsproj.mono tests/FsPretty.Tests/FsPretty.Tests.fsproj  
     
   # use mono
@@ -38,4 +39,9 @@ else
   [ ! -e build.fsx ] && mono .paket/paket.exe update
   [ ! -e build.fsx ] && mono packages/FAKE/tools/FAKE.exe init.fsx
   mono packages/FAKE/tools/FAKE.exe $@ --fsiargs -d:MONO build.fsx 
+
+  # put project files back to avoid git noticing the swap
+  mv tests/FsPretty.Tests/FsPretty.Tests.fsproj tests/FsPretty.Tests/FsPretty.Tests.fsproj.mono
+  mv tests/FsPretty.Tests/FsPretty.Tests.fsproj.vs tests/FsPretty.Tests/FsPretty.Tests.fsproj
+
 fi
