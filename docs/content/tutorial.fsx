@@ -18,6 +18,7 @@ For example, say you want to format a list of integers as a tuple:
 *)
 #r "FsPretty.dll"
 open FsPretty.PrettyPrint
+open FsPretty.Rendering
 
 let mylist = [1..6]
 let tuple = List.map mkint mylist |> encloseSep lparen rparen comma

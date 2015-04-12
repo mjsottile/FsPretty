@@ -31,6 +31,7 @@ For example, a list of integers can be turned into a tuple via:
 *)
 #r "FsPretty.dll"
 open FsPretty.PrettyPrint
+open FsPretty.Rendering
 
 let mylist = List.map mkint [1;2;3]
              |> encloseSep lparen rparen comma
