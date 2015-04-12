@@ -63,11 +63,13 @@ For example, a list of integers can be turned into a tuple via:</p>
 <span class="l">5: </span>
 <span class="l">6: </span>
 <span class="l">7: </span>
+<span class="l">8: </span>
 </pre>
 </td>
 <td class="snippet"><pre class="fssnip">
 <span class="prep">#r</span> <span class="s">&quot;FsPretty.dll&quot;</span>
 <span class="k">open</span> <span class="i">FsPretty</span><span class="o">.</span><span class="i">PrettyPrint</span>
+<span class="k">open</span> <span class="i">FsPretty</span><span class="o">.</span><span class="i">Rendering</span>
 
 <span class="k">let</span> <span onmouseout="hideTip(event, 'fs1', 1)" onmouseover="showTip(event, 'fs1', 1)" class="i">mylist</span> <span class="o">=</span> <span onmouseout="hideTip(event, 'fs2', 2)" onmouseover="showTip(event, 'fs2', 2)" class="t">List</span><span class="o">.</span><span onmouseout="hideTip(event, 'fs3', 3)" onmouseover="showTip(event, 'fs3', 3)" class="f">map</span> <span class="i">mkint</span> [<span class="n">1</span>;<span class="n">2</span>;<span class="n">3</span>]
              <span class="o">|&gt;</span> <span class="i">encloseSep</span> <span class="i">lparen</span> <span class="i">rparen</span> <span class="i">comma</span>
