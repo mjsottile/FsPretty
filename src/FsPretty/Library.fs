@@ -16,8 +16,12 @@ March 2015
 
 *)
 
+/// Library of pretty printer primitives for constructing Doc document objects.
 module PrettyPrint =
 
+    /// A Doc represents a Document that has been constructed with the set of
+    /// provided pretty printer combinators, and then rendered with one of the
+    /// provided renderers. 
     type Doc =
         | Empty
         | Char of char
@@ -28,12 +32,6 @@ module PrettyPrint =
         | Union of Doc * Doc
         | Column of (int -> Doc)
         | Nesting of (int -> Doc)
-
-    type SimpleDoc =
-        | SEmpty
-        | SChar of char * SimpleDoc
-        | SText of int * string * SimpleDoc
-        | SLine of int * SimpleDoc
 
     /// The empty document.
     let empty = Empty
@@ -183,12 +181,18 @@ module PrettyPrint =
 
     let group x = Union (flatten x, x)
 
+    /// A softline behaves line empty if the output fits on one line, otherwise it behaves
+    /// like a lineline
     let softline = group line
 
+    /// A softbreak behaves line empty if the output fits on one line, otherwise it behaves
+    /// like a linebreak
     let softbreak = group linebreak
 
+    /// Concatenate two documents with a softline in between them.
     let inline (</>) x y = x <<>> softline <<>> y
 
+    /// Concatenate two documents with a softbreak in between them.
     let inline (<//>) x y = x <<>> softbreak <<>> y
 
     let vsep = fold (<*>)
@@ -201,6 +205,8 @@ module PrettyPrint =
     /// Horizontally concatenate a list of Doc objects.
     let hcat = fold (<<>>)
 
+    /// Concatenate all of the Docs horizontally as long as it fits the page and then
+    /// insert a linebreak and continue doing so for the remaining Docs.
     let fillCat = fold (<//>)
 
     /// Surround a Doc by a left and a right Doc.
@@ -230,8 +236,12 @@ module PrettyPrint =
     let nesting f = Nesting f
 
     let sep = group << vsep
-    let cat = group << vcat
 
+    /// Concatenate all of the Documents horizontally if it fits a page or vertically if not.
+    let cat = group << vcat
+    
+    /// Given a list of Doc objects and a punctuation Doc, return the list
+    /// with each Doc except the last followed by the punctuation.
     let rec punctuate p = function
         | []    -> []
         | d::[] -> [d]
@@ -239,6 +249,8 @@ module PrettyPrint =
 
     let width d f = column (fun k1 -> d <<>> column (fun k2 -> f (k2-k1)))
 
+    /// Render the given document and append spaces until the width is f.  If the width is
+    /// greather than f without added spaces then nothing is added.
     let fill f d = width d (fun w -> if w >= f then empty else text (spaces (f-w)))
 
     let align d = column (fun k -> nesting (fun i -> nest (k-i) d))
@@ -270,67 +282,3 @@ module PrettyPrint =
 
     let fillBreak f x = width x (fun w -> if w > f then nest f linebreak
                                                    else text (spaces (f-w)))
-
-    // =======================================================================
-    //     Rendering code
-    // =======================================================================
-
-    type Docs =
-        | Nil
-        | Cons of int * Doc * Docs
-
-    let rec fits w = function
-        | _ when w < 0  -> false
-        | SEmpty        -> true
-        | SChar (c,x)   -> fits (w-1) x
-        | SText (l,s,x) -> fits (w-l) x
-        | SLine (i,x)   -> true
-
-    let renderPretty (rfrac:float) w x =
-        let r = max 0 (min w ((float w) * rfrac |> round |> int))
-        let nicest n k x y =
-            let width = min (w-k) (r-k+n)
-            if (fits width x) then x else y
-        let rec best n k = function
-            | Nil -> SEmpty
-            | Cons (i,d,ds) -> match d with
-                               | Empty       -> best n k ds
-                               | Char c      -> SChar (c, best n (k+1) ds)
-                               | Text (l,s)  -> SText (l, s, best n (k+l) ds)
-                               | Line _      -> SLine (i, best i i ds)
-                               | Cat (x,y)   -> best n k (Cons (i, x, Cons(i, y, ds)))
-                               | Nest (j,x)  -> best n k (Cons (i+j, x, ds))
-                               | Union (x,y) -> nicest n k (best n k (Cons (i, x, ds)))
-                                                           (best n k (Cons (i, y, ds)))
-                               | Column f    -> best n k (Cons (i, (f k), ds))
-                               | Nesting f   -> best n k (Cons (i, (f i), ds))
-        best 0 0 (Cons (0,x,Nil))
-
-    let renderCompact x =
-        let rec scan k = function
-        | [] -> SEmpty
-        | d::ds -> match d with
-                   | Empty       -> scan k ds
-                   | Char c      -> SChar (c, scan (k+1) ds)
-                   | Text (l,s)  -> SText (l, s, scan (k+1) ds)
-                   | Line _      -> SLine (0, scan 0 ds)
-                   | Cat (x,y)   -> scan k (x::y::ds)
-                   | Nest (j,x)  -> scan k (x::ds)
-                   | Union (x,y) -> scan k (y::ds)
-                   | Column f    -> scan k (f k::ds)
-                   | Nesting f   -> scan k (f 0::ds)
-        scan 0 [x]
-
-    /// Render a SimpleDoc as a string.
-    let rec displayS = function
-        | SEmpty        -> ""
-        | SChar (c,x)   -> string(c) + (displayS x)
-        | SText (l,s,x) -> s + (displayS x)
-        | SLine (i,x)   -> "\n"+(indentation i)+(displayS x)
-
-    /// Render a Doc as a string assuming an 80 column width.
-    let displayString s = renderPretty 0.4 80 s |> displayS
-
-    /// Render a Doc as a string with a given width w.
-    let displayStringW w s = renderPretty 0.4 w s |> displayS
-

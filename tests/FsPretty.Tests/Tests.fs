@@ -1,6 +1,7 @@
 module FsPretty.Tests
 
 open FsPretty.PrettyPrint
+open FsPretty.Rendering
 open NUnit.Framework
 open FsUnit
 
